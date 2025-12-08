@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/gradient_background"
+    android:gravity="center"
+    android:padding="20dp">
+
+    <!-- Titre Jeux -->
+
+
+    <!-- Bouton CONNEXION -->
+
+    <!-- Bouton INSCRIPTION -->
+
+    <!-- TF8 -->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="100dp"
+        android:text="Quizz"
+        android:textColor="@color/blanc"
+        android:textSize="42sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+        android:alpha="0.8"
+        android:text="TF8"
+        android:textColor="@color/blanc"
+        android:textSize="14sp" />
+
+</LinearLayout>

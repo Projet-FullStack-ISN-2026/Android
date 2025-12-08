@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
+    android:padding="20dp"
+    tools:ignore="MissingClass">
+
+    <!-- Titre -->
+
+    <!-- Label Email/Utilisateur -->
+
+    <!-- Champ Email -->
+
+    <!-- Label Mot de passe -->
+
+    <EditText
+        android:id="@+id/editTextText4"
+        android:layout_width="275dp"
+        android:layout_height="66dp"
+        android:background="@drawable/button_transparent_white"
+        android:ems="10"
+        android:hint="**********"
+        android:inputType="textPassword"
+        android:letterSpacing="0.05"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:textColor="@color/blanc"
+        android:textColorHint="@color/blanc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.354"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="410dp" />
+
+    <EditText
+        android:id="@+id/editTextText2"
+        android:layout_width="275dp"
+        android:layout_height="66dp"
+        android:background="@drawable/button_transparent_white"
+        android:ems="10"
+        android:hint="XXXXXXX"
+        android:inputType="textEmailAddress"
+        android:letterSpacing="0.05"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:textColor="@color/blanc"
+        android:textColorHint="@color/blanc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.354"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="136dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="75dp"
+        android:layout_height="47dp"
+        android:text="NOM"
+        android:textColor="@color/blanc"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="109dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="143dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="4dp"
+        android:text="PRENOM"
+        android:textColor="@color/blanc"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.004"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextText2" />
+
+    <EditText
+        android:id="@+id/editTextText3"
+        android:layout_width="275dp"
+        android:layout_height="66dp"
+        android:background="@drawable/button_transparent_white"
+        android:ems="10"
+        android:hint="YYYYYYY"
+        android:inputType="textPassword"
+        android:letterSpacing="0.05"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:textColor="@color/blanc"
+        android:textColorHint="@color/blanc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.354"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="222dp" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="275dp"
+        android:layout_height="23dp"
+        android:layout_marginTop="272dp"
+        android:text="CONFIRMER VOTRE MOT DE PASSE"
+        android:textColor="@color/blanc"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextText2" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="143dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="180dp"
+        android:text="MOT DE PASSE"
+        android:textColor="@color/blanc"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.004"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextText2" />
+
+    <EditText
+        android:id="@+id/editTextText"
+        android:layout_width="275dp"
+        android:layout_height="66dp"
+        android:layout_marginTop="316dp"
+        android:background="@drawable/button_transparent_white"
+        android:ems="10"
+        android:hint="hello@greatsite.com"
+        android:inputType="textPassword"
+        android:letterSpacing="0.05"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:textColor="@color/blanc"
+        android:textColorHint="@color/blanc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.354"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="143dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="92dp"
+        android:text="MAIL"
+        android:textColor="@color/blanc"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextText2" />
+
+    <EditText
+        android:id="@+id/editTextText5"
+        android:layout_width="275dp"
+        android:layout_height="66dp"
+        android:background="@drawable/button_transparent_white"
+        android:ems="10"
+        android:hint="**********"
+        android:inputType="textPassword"
+        android:letterSpacing="0.05"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:textColor="@color/blanc"
+        android:textColorHint="@color/blanc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.354"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="494dp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="379dp"
+        android:layout_height="63dp"
+        android:background="@drawable/button_transparent_white"
+        android:letterSpacing="0.05"
+        android:text="Valider l'inscription"
+        android:textColor="@color/blanc"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="591dp" />
+
+    <!-- Champ Mot de passe -->
+
+    <!-- Bouton Valider -->
+
+    <!-- Pied de page TF8 -->
+
+    <TextView
+        android:id="@+id/textViewTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Inscription"
+        android:textColor="@color/blanc"
+        android:textSize="42sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewFooter"
+        android:layout_width="62dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="216dp"
+        android:alpha="0.8"
+        android:text="TF8"
+        android:textColor="@color/blanc"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
