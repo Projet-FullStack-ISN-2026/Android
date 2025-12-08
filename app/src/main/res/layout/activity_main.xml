@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -32,7 +33,7 @@
         android:background="@drawable/button_transparent_white"
         android:layout_marginBottom="25dp"
         android:letterSpacing="0.05"
-        style="@style/ModernButton" />
+         />
 
     <!-- Bouton INSCRIPTION -->
     <Button
@@ -44,7 +45,7 @@
         android:textStyle="bold"
         android:background="@drawable/button_transparent_white"
         android:letterSpacing="0.05"
-        style="@style/ModernButton" />
+         />
 
     <!-- TF8 -->
     <TextView

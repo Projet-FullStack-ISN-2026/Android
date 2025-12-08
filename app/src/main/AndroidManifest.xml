@@ -15,6 +15,9 @@
             android:name=".ClassementActivity"
             android:exported="false" />
         <activity
+            android:name=".AccueilActivity"
+            android:exported="true">
+        <activity
             android:name=".GenereActivity"
             android:exported="false" />
         <activity
@@ -23,6 +26,9 @@
         <activity
             android:name=".QuestionActivity"
             android:exported="true" >
+
+
+
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
