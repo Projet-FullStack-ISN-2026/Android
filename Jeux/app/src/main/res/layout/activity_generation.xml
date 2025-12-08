@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GenerationActivity">
+
+    <?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical"
+android:background="@drawable/gradient_background"
+android:gravity="center"
+android:padding="20dp">
+
+<!-- Titre GENERATION DE QUIZ -->
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Génération de quiz"
+    android:textColor="@color/blanc"
+    android:textSize="42sp"
+    android:textStyle="bold"
+    android:layout_marginStart="45dp"
+    android:layout_marginTop="40dp"
+    android:layout_marginBottom="100dp" />
+
+    <!-- Bouton NOMBRE DE QUESTIONS -->
+    <Button
+        android:layout_width="280dp"
+        android:layout_height="55dp"
+        android:text=""
+        android:textColor="@color/blanc"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:background="@drawable/button_transparent_white"
+        android:layout_marginStart="45dp"
+        android:letterSpacing="0.05"
+        style="@style/ModernButton" />
+
+<!-- Bouton GENERER -->
+<Button
+    android:layout_width="280dp"
+    android:layout_height="55dp"
+    android:text="Générer"
+    android:textColor="@color/blanc"
+    android:textSize="16sp"
+    android:textStyle="bold"
+    android:background="@drawable/button_transparent_white"
+    android:layout_marginBottom="25dp"
+    android:letterSpacing="0.05"
+    style="@style/ModernButton" />
+
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="TF8"
+    android:textColor="@color/blanc"
+    android:textSize="14sp"
+    android:layout_marginTop="120dp"
+    android:alpha="0.8" />
+
+</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
