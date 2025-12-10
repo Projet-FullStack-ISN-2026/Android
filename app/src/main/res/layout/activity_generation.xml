@@ -16,11 +16,6 @@ android:background="@drawable/gradient_background"
 android:gravity="center"
 android:padding="20dp">
 
-<!-- Titre GENERATION DE QUIZ -->
-
-    <!-- Bouton NOMBRE DE QUESTIONS -->
-
-    <!-- Bouton GENERER -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

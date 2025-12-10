@@ -16,7 +16,7 @@
             android:exported="false" />
         <activity
             android:name=".AccueilActivity"
-            android:exported="true">
+            android:exported="true"/>
         <activity
             android:name=".GenereActivity"
             android:exported="false" />
@@ -25,12 +25,17 @@
             android:exported="true" />
         <activity
             android:name=".QuestionActivity"
+            android:exported="true" />
+        <activity
+            android:name=".MainActivity"
             android:exported="true" >
 
 
 
 
-            <intent-filter>
+
+
+        <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />

@@ -8,7 +8,7 @@
       <SelectionState runConfigName="AccueilActivity">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="AccueilActivity (1)">
+      <SelectionState runConfigName="GenerationActivity">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
     </selectionStates>
