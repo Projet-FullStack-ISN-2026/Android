@@ -39,9 +39,14 @@ dependencies {
     implementation(libs.material)
     implementation(libs.activity)
     implementation(libs.constraintlayout)
+    implementation(libs.volley)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
     implementation ("com.squareup.okhttp3:okhttp:4.9.3")
     implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0")
+    implementation ("com.google.code.gson:gson:2.10.1")
+    implementation(files("libs/ClientWS-0.0.1-SNAPSHOT.jar")) // Le jar avec les fonctions WS
+    implementation ("org.java-websocket:Java-WebSocket:1.6.0") // Permet de se connecter au serveur
+    implementation("com.google.code.gson:gson:2.10.1") // Permet de manipuler du JSON
 }

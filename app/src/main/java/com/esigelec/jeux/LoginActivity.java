@@ -1,13 +1,17 @@
 package com.esigelec.jeux;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import android.util.Log;
 import androidx.appcompat.app.AppCompatActivity;
+
 import okhttp3.*;
 import org.json.JSONException;
 import org.json.JSONObject;
+
 import java.io.IOException;
 
 public class LoginActivity extends AppCompatActivity {
@@ -16,14 +20,8 @@ public class LoginActivity extends AppCompatActivity {
     private EditText editTextPassword;
     private Button buttonLogin;
 
-    private final String MOCK_SERVER_URL = "https://95fc8e26-8322-4331-8771-3f6edee908f5.mock.pstmn.io";
-
-    // Comptes en dur pour tests locaux
-    private final String[][] HARDCODED_ACCOUNTS = {
-            {"admin@test.com", "admin123"},
-            {"user@test.com", "user123"},
-            {"test@example.com", "password123"}
-    };
+    private static final String TAG = "LoginActivity";
+    private static final String MOCK_SERVER_URL = "http://95fc8e26-8322-4331-8771-3f6edee908f5.mock.pstmn.io/login";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,53 +33,58 @@ public class LoginActivity extends AppCompatActivity {
         buttonLogin = findViewById(R.id.button);
 
         buttonLogin.setOnClickListener(view -> {
-            String email = editTextEmail.getText().toString();
-            String password = editTextPassword.getText().toString();
+            String email = editTextEmail.getText().toString().trim();
+            String password = editTextPassword.getText().toString().trim();
 
-            // Validation locale d'abord
-            if (validateLocalCredentials(email, password)) {
-                // Appel au mock server
-                loginWithMockServer(email, password);
-            } else {
-                Toast.makeText(LoginActivity.this,
-                        "Identifiants locaux incorrects", Toast.LENGTH_SHORT).show();
+            if (email.isEmpty() || password.isEmpty()) {
+                Toast.makeText(this, "Veuillez remplir tous les champs", Toast.LENGTH_SHORT).show();
+                return;
             }
+
+            // Appel au mock server
+            loginWithMockServer(email, password);
         });
     }
 
-    private boolean validateLocalCredentials(String email, String password) {
-        for (String[] account : HARDCODED_ACCOUNTS) {
-            if (account[0].equals(email) && account[1].equals(password)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
     private void loginWithMockServer(String email, String password) {
-        new Thread(() -> {
-            OkHttpClient client = new OkHttpClient();
+        OkHttpClient client = new OkHttpClient();
 
-            // Créer le JSON body
-            JSONObject json = new JSONObject();
-            try {
-                json.put("email", email);
-                json.put("password", password);
-            } catch (JSONException e) {
-                e.printStackTrace();
+        // Créer le JSON body
+        JSONObject jsonBody = new JSONObject();
+        try {
+            jsonBody.put("email", email);
+            jsonBody.put("password", password);
+        } catch (JSONException e) {
+            Log.e(TAG, "Erreur création JSON", e);
+            return;
+        }
+
+        RequestBody body = RequestBody.create(
+                jsonBody.toString(),
+                MediaType.parse("application/json; charset=utf-8")
+        );
+
+        Request request = new Request.Builder()
+                .url(MOCK_SERVER_URL)
+                .post(body)
+                .addHeader("Content-Type", "application/json")
+                .addHeader("Accept", "application/json")
+                .build();
+
+        Log.d(TAG, "Envoi à Mock Server...");
+
+        client.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+                runOnUiThread(() -> {
+                    Toast.makeText(LoginActivity.this,
+                            "Erreur de connexion", Toast.LENGTH_SHORT).show();
+                    Log.e(TAG, "Network error: " + e.getMessage());
+                });
             }
 
-            MediaType mediaType = MediaType.parse("application/json; charset=utf-8");
-            RequestBody body = RequestBody.create(json.toString(), mediaType);
-
-            Request request = new Request.Builder()
-                    .url(MOCK_SERVER_URL + "/login")
-                    .post(body)
-                    .addHeader("Content-Type", "application/json")
-                    .build();
-
-            try {
-                Response response = client.newCall(request).execute();
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
                 String responseBody = response.body() != null ? response.body().string() : "";
 
                 runOnUiThread(() -> {
@@ -91,39 +94,58 @@ public class LoginActivity extends AppCompatActivity {
                             String status = jsonResponse.getString("status");
 
                             if ("success".equals(status)) {
+                                // Récupérer les données
                                 String token = jsonResponse.getString("token");
+                                JSONObject user = jsonResponse.getJSONObject("user");
+
+                                String userId = String.valueOf(user.getInt("id"));
+                                String nom = user.getString("nom");
+                                String prenom = user.getString("prenom");
+
+                                // Message de succès
                                 Toast.makeText(LoginActivity.this,
                                         "Connexion réussie!", Toast.LENGTH_SHORT).show();
 
-                                // Récupérer les infos utilisateur si disponibles
-                                if (jsonResponse.has("user")) {
-                                    JSONObject user = jsonResponse.getJSONObject("user");
-                                    String nom = user.getString("nom");
-                                    String prenom = user.getString("prenom");
-                                    // Traiter les données utilisateur...
-                                }
+                                // REDIRECTION VERS ACCUEIL
+                                redirectToAccueil(userId, nom, prenom, token);
 
                             } else {
+                                // Erreur métier
                                 String message = jsonResponse.getString("message");
-                                Toast.makeText(LoginActivity.this,
-                                        message, Toast.LENGTH_SHORT).show();
+                                Toast.makeText(LoginActivity.this, message, Toast.LENGTH_SHORT).show();
                             }
                         } else {
+                            // Erreur HTTP
                             Toast.makeText(LoginActivity.this,
                                     "Erreur serveur: " + response.code(), Toast.LENGTH_SHORT).show();
                         }
                     } catch (JSONException e) {
                         Toast.makeText(LoginActivity.this,
-                                "Erreur de parsing JSON", Toast.LENGTH_SHORT).show();
+                                "Erreur de format", Toast.LENGTH_SHORT).show();
+                        Log.e(TAG, "JSON error: " + e.getMessage());
                     }
                 });
-
-            } catch (IOException e) {
-                runOnUiThread(() ->
-                        Toast.makeText(LoginActivity.this,
-                                "Erreur réseau: " + e.getMessage(), Toast.LENGTH_SHORT).show()
-                );
             }
-        }).start();
+        });
+    }
+
+    /**
+     * Redirection vers AccueilActivity avec les données utilisateur
+     */
+    private void redirectToAccueil(String userId, String nom, String prenom, String token) {
+        Intent intent = new Intent(LoginActivity.this, AccueilActivity.class);
+
+        // Passer les données à AccueilActivity
+        intent.putExtra("USER_ID", userId);
+        intent.putExtra("USER_NOM", nom);
+        intent.putExtra("USER_PRENOM", prenom);
+        intent.putExtra("USER_TOKEN", token);
+        intent.putExtra("USER_EMAIL", editTextEmail.getText().toString().trim());
+
+        // Démarrer l'activité
+        startActivity(intent);
+
+        // Optionnel: fermer LoginActivity pour ne pas pouvoir y revenir avec "back"
+        finish();
     }
 }

@@ -1,62 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".GenerationActivity">
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/gradient_background"
+    android:padding="20dp">
 
-    <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    android:layout_width="match_parent"
-android:layout_height="match_parent"
-android:orientation="vertical"
-android:background="@drawable/gradient_background"
-android:gravity="center"
-android:padding="20dp">
-
+    <!-- Titre -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="45dp"
         android:layout_marginTop="40dp"
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="60dp"
         android:text="Génération de quiz"
         android:textColor="@color/blanc"
-        android:textSize="42sp"
+        android:textSize="36sp"
         android:textStyle="bold" />
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/champTheme"
-        android:layout_width="268dp"
+    <!-- Champ Thème -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="280dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:hint="Nom"
-        android:minHeight="48dp"
-        android:padding="12dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="parent" />
+        android:layout_marginBottom="20dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:hint="Thème du quiz"
+        app:hintTextColor="@color/blanc"
+        app:boxStrokeColor="@color/blanc"
+        app:boxStrokeWidth="1dp">
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/champNbquest"
-        android:layout_width="268dp"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/champTheme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/blanc"
+            android:textColorHint="@color/blanc"
+            android:minHeight="48dp"
+            android:padding="12dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Champ Nombre de questions -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="280dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="40dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:hint="Nombre de questions"
-        android:minHeight="48dp"
-        android:padding="12dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="parent" />
+        app:hintTextColor="@color/blanc"
+        app:boxStrokeColor="@color/blanc"
+        app:boxStrokeWidth="1dp">
 
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/champNbquest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:textColor="@color/blanc"
+            android:textColorHint="@color/blanc"
+            android:minHeight="48dp"
+            android:padding="12dp" />
+    </com.google.android.material.textfield.TextInputLayout>
 
+    <!-- Bouton Générer -->
     <Button
         android:id="@+id/btnGeneration"
-        style="@style/ModernButton"
         android:layout_width="280dp"
         android:layout_height="55dp"
         android:layout_marginBottom="25dp"
@@ -67,14 +75,14 @@ android:padding="20dp">
         android:textSize="16sp"
         android:textStyle="bold" />
 
+    <!-- Logo TF8 -->
     <TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="TF8"
-    android:textColor="@color/blanc"
-    android:textSize="14sp"
-    android:layout_marginTop="120dp"
-    android:alpha="0.8" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:alpha="0.8"
+        android:text="TF8"
+        android:textColor="@color/blanc"
+        android:textSize="14sp" />
 
 </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>

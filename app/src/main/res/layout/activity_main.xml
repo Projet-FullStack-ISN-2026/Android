@@ -24,28 +24,28 @@
 
     <!-- Bouton CONNEXION -->
     <Button
+        android:id="@+id/btnConnexion"
         android:layout_width="280dp"
         android:layout_height="55dp"
+        android:layout_marginBottom="25dp"
+        android:background="@drawable/button_transparent_white"
+        android:letterSpacing="0.05"
         android:text="CONNEXION"
         android:textColor="@color/blanc"
         android:textSize="16sp"
-        android:textStyle="bold"
-        android:background="@drawable/button_transparent_white"
-        android:layout_marginBottom="25dp"
-        android:letterSpacing="0.05"
-         />
+        android:textStyle="bold" />
 
     <!-- Bouton INSCRIPTION -->
     <Button
+        android:id="@+id/btnIncription"
         android:layout_width="280dp"
         android:layout_height="55dp"
+        android:background="@drawable/button_transparent_white"
+        android:letterSpacing="0.05"
         android:text="INSCRIPTION"
         android:textColor="@color/blanc"
         android:textSize="16sp"
-        android:textStyle="bold"
-        android:background="@drawable/button_transparent_white"
-        android:letterSpacing="0.05"
-         />
+        android:textStyle="bold" />
 
     <!-- TF8 -->
     <TextView

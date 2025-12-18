@@ -1,27 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/main"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/gradient_background"
-    android:gravity="center"
     android:padding="20dp">
 
+    <!-- Titre -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:layout_marginBottom="100dp"
-        android:text="Quizz"
+        android:layout_marginBottom="30dp"
+        android:layout_gravity="center"
+        android:text="Liste des quiz"
         android:textColor="@color/blanc"
-        android:textSize="42sp"
+        android:textSize="32sp"
         android:textStyle="bold" />
 
+    <!-- Sous-titre -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="120dp"
+        android:layout_marginBottom="30dp"
+        android:layout_gravity="center"
+        android:text="Cliquez sur un quiz pour participer"
+        android:textColor="@color/blanc"
+        android:textSize="16sp"
+        android:alpha="0.9" />
+
+    <!-- ScrollView pour la liste des quiz -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="10dp"
+        android:scrollbars="vertical">
+
+        <LinearLayout
+            android:id="@+id/quizContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal" />
+
+    </ScrollView>
+
+    <!-- Bouton Retour -->
+    <Button
+        android:id="@+id/btnBack"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button_transparent_white"
+        android:text="Retour"
+        android:textColor="@color/blanc"
+        android:textSize="16sp" />
+
+    <!-- Logo -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
         android:alpha="0.8"
         android:text="TF8"
         android:textColor="@color/blanc"

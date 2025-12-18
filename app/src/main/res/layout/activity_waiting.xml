@@ -1,10 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".WaitingActivity">
+    android:orientation="vertical"
+    android:background="@drawable/gradient_background"
+    android:gravity="center"
+    android:padding="40dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- Titre du quiz -->
+    <TextView
+        android:id="@+id/tvQuizTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="60dp"
+        android:text="Titre du Quiz"
+        android:textColor="@color/blanc"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:gravity="center" />
+
+    <!-- Message d'attente -->
+    <TextView
+        android:id="@+id/tvWaitingMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:text="En attente du début du quiz par l'animateur..."
+        android:textColor="@color/blanc"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:lineSpacingExtra="8sp" />
+
+    <!-- Animation/loader (simple) -->
+    <ProgressBar
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginBottom="60dp"
+        android:indeterminateTint="@color/blanc" />
+
+    <!-- Instructions -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="80dp"
+        android:text="Veuillez patienter\nL'animateur va bientôt démarrer le quiz"
+        android:textColor="@color/blanc"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:alpha="0.8" />
+
+    <!-- Bouton Annuler -->
+    <Button
+        android:id="@+id/btnCancel"
+        android:layout_width="280dp"
+        android:layout_height="55dp"
+        android:text="Quitter"
+        android:textColor="@color/blanc"
+        android:textSize="16sp" />
+
+    <!-- Logo -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:alpha="0.6"
+        android:text="TF8"
+        android:textColor="@color/blanc"
+        android:textSize="14sp" />
+
+</LinearLayout>
