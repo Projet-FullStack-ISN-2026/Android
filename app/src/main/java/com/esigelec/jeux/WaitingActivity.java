@@ -29,7 +29,7 @@ public class WaitingActivity extends AppCompatActivity {
     private Runnable checkStatusRunnable;
 
     // URL pour vérifier le statut du quiz
-    private String STATUS_URL = "http://10.3.70.14:8080/quiz"; // À compléter
+    private String STATUS_URL = "http://10.3.70.14:8080/quiz";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,7 +79,7 @@ public class WaitingActivity extends AppCompatActivity {
     }
 
     private void checkQuizStatus() {
-        String url = STATUS_URL + quizId + "/status"; // Adapter selon votre API
+        String url = STATUS_URL + quizId + "/status"; // Adapté selon  l'API
 
         OkHttpClient client = new OkHttpClient.Builder()
                 .connectTimeout(10, TimeUnit.SECONDS)

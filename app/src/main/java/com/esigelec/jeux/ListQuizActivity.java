@@ -26,7 +26,7 @@ import okhttp3.Response;
 public class ListQuizActivity extends AppCompatActivity {
 
     private LinearLayout quizContainer;
-    private String API_URL = "http://10.3.70.14:8080/quiz"; // À compléter avec votre URL
+    private String API_URL = "http://10.3.70.14:8080/quiz";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -234,7 +234,7 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
                                     Toast.LENGTH_SHORT).show();
 
                             // Rediriger vers l'accueil
-                            redirectToHome(userEmail, firstName, lastName, role);
+                            redirectToList(userEmail, firstName, lastName, role);
 
                         } catch (JSONException e) {
                             Log.e(TAG, "Erreur parsing JSON: " + e.getMessage());
@@ -355,13 +355,13 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
                 saveUserToken(token);
 
                 Toast.makeText(this, "Connexion réussie!", Toast.LENGTH_SHORT).show();
-                redirectToHome(email, firstName, lastName, 3); // 3 = JOUEUR par défaut
+                redirectToList(email, firstName, lastName, 3); // 3 = JOUEUR par défaut
             } else {
                 // Autre format inattendu
                 Toast.makeText(this,
                         "Inscription réussie (format réponse inattendu)",
                         Toast.LENGTH_SHORT).show();
-                redirectToHome("", "", "", 3);
+                redirectToList("", "", "", 3);
             }
         } catch (JSONException e) {
             showError("Format de réponse non reconnu: " + response.toString());
@@ -377,8 +377,8 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
         Log.d(TAG, "Token sauvegardé: " + token.substring(0, Math.min(20, token.length())) + "...");
     }
 
-    private void redirectToHome(String email, String firstName, String lastName, int role) {
-        Intent intent = new Intent(SignInActivity.this, AccueilActivity.class);
+    private void redirectToList(String email, String firstName, String lastName, int role) {
+        Intent intent = new Intent(SignInActivity.this, ListQuizActivity.class);
 
         // Passer les données utilisateur
         intent.putExtra("email", email);
