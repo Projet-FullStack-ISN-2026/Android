@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="indigo_fonce">#0f094f</color>
+    <color name="violet">#4a148c</color>
+    <color name="rose_fonce">#880e4f</color>
+    <color name="bleu_vif">#1565c0</color>
+    <color name="rose_vif">#c2185b</color>
+    <color name="blanc">#FFFFFF</color>
+    <color name="transparent_white">#22FFFFFF</color>
+</resources>
